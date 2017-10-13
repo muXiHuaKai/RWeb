@@ -1,0 +1,732 @@
+/**************
+页面样式
+ */
+
+/* =========    
+基本默认值
+ */
+
+html{
+    /*
+        font-size:62.5%  1rem = 10px (10/16*100%)
+        font-size:100%   1rem = 16px
+    */
+    font-size: 62.5%;
+    color: #222;
+}
+::selection{
+    background-color: #b3d4fc;
+    text-shadow: none;
+}
+ul{
+    margin:0;
+    padding:0;
+}
+li{
+    list-style: none;
+}
+
+
+
+/*========
+    工具样式
+ */
+.center-block{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+.pull-right{
+    float: right !important;
+}
+.pull-left{
+    float: left !important;
+}
+.text-right{
+    text-align: right !important;
+}
+.text-left{
+    text-align: left !important;
+}
+.text-center{
+    text-align: center !important;
+}
+.hide{
+    display: none !important;
+}
+.show{
+    display: block !important;
+}
+.invisible{
+    visibility: hidden;
+}
+.text-hide{
+    font:0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border:0;
+}
+/* 设置：before  防止浏览器顶部塌陷  margin塌陷*/
+.clearfix:before,
+.clearfix:after{
+    content:".";
+    display: block;
+    height:0;
+    visibility: hidden;
+}
+.clearfix:after{
+    clear: both;
+}
+
+/*=======
+浏览器更新提示
+ */
+.browserupgrade{
+    margin:0;
+    padding:1rem;
+    background: #CCCCCC;
+}
+
+
+/*======
+自定义页面样式
+ */
+body{
+    font-size: 1.2rem; /*12px*/
+    line-height:1.5;
+    background-color: #f7f7f7;
+}
+a{
+    color: #666666;
+    text-decoration: none;
+}
+a:hover, a:active{
+    color: #0ae;
+    text-decoration: underline;
+}
+/*网站头部*/
+header{
+    width: 100%;
+}
+header .top{
+    line-height: 3rem;
+    padding:0 1.5rem;
+    color: #fff;
+    background: #555;
+    border-bottom:1px #ecc000 solid;
+}
+header .top ul li{
+    /*使li一行显示*/
+    display: inline-block;
+}
+header .top ul li+li{
+    border-left:1px solid #999999;
+    /*inline-block间的空白符*/
+    margin-left: -3px;
+}
+
+header .top ul li a{
+    display: inline-block;
+    padding:0 1.5rem;
+    color: #ffffff;
+}
+
+
+
+header .main{
+    padding:0;
+}
+header .main .brand{
+    float: left;
+    padding:1rem 1.5rem;
+}
+header .main ul{
+    text-align: right;
+}
+header .main ul li{
+    display: inline-block;
+    line-height: 3rem;
+    border-left:1px solid #f0ede9;
+}
+header .main ul li a{
+    display: inline-block;
+    padding:0 2rem;
+    line-height:5.5rem;
+    font-size: 1.6rem;
+    font-weight:bold;
+    color: #7c7a65;
+    text-decoration: none;
+}
+header .main ul li a:hover{
+    color: #ffb300;
+    background-color: #f8f6f1;
+}
+
+@media only screen and (max-width:50em ){  /*1rem =16px   800px*/
+    header .top{
+        /*line-height:2rem;*/
+        padding:0 1rem;
+    }
+    header .top ul li a{
+        padding:0 .7rem;
+    }
+    header .main .brand{
+        /*text-align: center;*/
+        /*width: 100%;*/
+        float: none;
+        display: block;
+        padding: 0;
+        margin:1.5rem auto .5rem;
+        text-align: center;
+    }
+    header .main ul{
+        text-align: center;
+    }
+    header .main ul li a{
+        padding:0 1rem;
+    }
+
+}
+
+@media only screen and (min-width:30.0625em ) and (max-width: 50em){
+
+}
+
+@media only screen and (max-width:30em ){
+    header .top .tel,
+    header .top ul li:nth-of-type(3),
+    header .top ul li:nth-of-type(4){
+        display: none;
+    }
+    header .main ul li:first-child{
+        display: none;
+    }
+    header .main ul li {
+
+    }
+    header .main ul li a{
+        font-weight: normal;
+        padding:0 .5rem;
+        line-height: 2rem;
+        text-align: center;
+    }
+}
+
+/*主要内容*/
+.container{
+    width: 100%;
+}
+/*滚动公告*/
+.transaction{
+    background: #5e5a4b;
+}
+.trans-content{
+    margin:0 auto;
+    color: #ffffff;
+    font-size:1.4rem;
+    padding:1rem 0;
+    width: 90%;
+}
+.trans-report a{
+    color: #FFFFFF;
+}
+.trans-data{
+    margin-right:3rem;
+}
+.trans-momeny{
+    display: inline-block;
+    background: #ffffff;
+    box-shadow: 1px 2px 1px #333 inset;
+    padding:0 .5rem;
+    color: #ff9900;
+}
+
+
+@media only screen and (max-width:50em ){
+    .trans-content{
+        width: 95%;
+        font-size:1.2rem;
+    }
+    .trans-data{
+        margin-right:.5rem;
+    }
+    .trans-momeny{
+        background: transparent;
+        box-shadow: none;
+        padding:0 .1rem;
+    }
+}
+
+@media only screen and (max-width:30em ){
+    .trans-content{
+        font-size:1.4rem;
+    }
+    .trans-data{
+        display: block;
+        width: 100%;
+        text-align: center;
+        line-height:1.5rem;
+    }
+    .trans-report{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+/*广告*/
+.ad{
+    /*display: none;*/
+}
+/*feature*/
+.feature{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    font-size:0;  /*清除inline-block的间隙*/
+}
+.feature .item{
+    box-sizing: border-box;
+    display: inline-block;
+    padding:1rem;
+    width: calc(33.3333% - 1rem);
+    font-size: 1.4rem;
+    background-color: #fff;
+    box-shadow:0 0 4px #ccc;
+}
+.feature .item + .item{
+    margin-left:1.5rem;
+}
+.feature .item h3{
+    display: inline-block;
+    width: 40%;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    font-size: 3.3rem;
+    text-align: center;
+    color: #ff9900;
+}
+.feature .item p{
+    display: inline-block;
+    width: 56%;
+    margin: 0;
+    padding: 0;
+    color: #999;
+}
+@media only screen and (max-width:50em ){
+    .feature{
+        width: 95%;
+    }
+    .feature .item{
+        padding:1rem 0;
+        width: calc(33.333% - 0.666rem);
+    }
+    .feature .item + .item{
+        margin-left:1rem;
+    }
+    .feature .item h3{
+        display: block;
+        width: 100%;
+        font-size:3rem;
+    }
+    .feature .item p{
+        width: 100%;
+        text-align: center;
+    }
+}
+@media only screen and (max-width:30em ){
+    .feature{
+        width: 98%;
+    }
+    .feature .item{
+        display: block;
+        width: 100%;
+        margin-top:1rem;
+    }
+    .feature .item + .item{
+        margin-left:0;
+    }
+    .feature .item h3{
+        display: inline-block;
+        width: 39%;
+        vertical-align: top;
+    }
+    .feature .item p{
+        display: inline-block;
+        width: 59%;
+        text-align: left;
+    }
+}
+
+
+/*公告*/
+.notice{
+    width: 90%;
+    margin-top: 2rem;
+    font-size:1.4rem;
+    line-height:3rem;
+    box-shadow: 0 0 4px #ccc;
+}
+.notice span{
+    padding:0 1rem;
+    color: darkgray;
+}
+.notice a{
+    float: left;
+    display: inline-block;
+    text-decoration: none;
+}
+.notice a:first-child{
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;  /*文字不换行*/
+    overflow: hidden;
+    width: 70%;
+    white-space:nowrap;  /*文字截断显示省略号*/
+}
+.notice a:first-child:before{
+    content: '最新公告';
+    padding:0 1rem;
+    color: darkgray;
+}
+.notice .more{
+    color: orangered;
+    padding-right:1rem;
+    float: right;
+}
+
+
+
+
+@media only screen and (max-width:50em ){
+    .notice {
+        width: 95%;
+        margin-top:1rem;
+    }
+}
+@media only screen and (max-width:30em ){
+    .notice{
+        width: 98%;
+        margin:1rem auto;
+        font-size:1.2rem;
+    }
+    .notice a{
+        margin-left:1rem;
+    }
+    .notice a span{
+        display: none;
+    }
+    .notice a:first-child:before{
+        padding-left: 0;
+    }
+}
+
+
+/*product*/
+.product{
+    width: 90%;
+    margin:2rem auto;
+    border-top: 2px solid #ff9900;
+    font-size:1.4rem;
+    background-color: #f5f9fa;
+    box-shadow: 0 0 4px #ccc;
+
+}
+.product h2{
+    width: 20%;
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight:normal;
+    display: inline-block;
+    /*background: #e6ebec;*/
+    float: left;
+    color: #635c51;
+}
+.product h2 em{
+    display: block;
+    margin-top: 1rem;
+    font-size:1.6rem;
+}
+.product h2 em:first-child{
+    margin-top: 4rem;
+}
+.product .product-content{
+    width: 79.5%;
+    float: right;
+    border-left:1px solid #eee;
+    background-color: #fff;
+}
+.product .product-content .item{
+    width: 100%;
+}
+.product .product-content .item+ .item{
+    border-top:1px solid #eee;
+}
+.product .product-content .item h3{
+    float: left;
+    width: 30%;
+    margin:2.5rem 0;
+    font-size:1.4rem;
+    font-weight: normal;
+    text-align: center;
+}
+.product .product-content .item h3 em{
+    font-size:3.6rem;
+    margin-right:.5rem;
+    color: #8b999d;
+    font-style: normal;
+}
+.product .product-content .item .info{
+    width: 54%;
+    float: left;
+    border-left:1px solid #eee;
+    border-right:1px solid #eee;
+}
+.product .product-content .item .info p{
+    display: inline-block;
+    width: 49%;
+    font-size:2rem;
+    text-align: center;
+}
+.product .product-content .item .year-rate , .product .product-content .item .money{
+    font-size:2.6rem;
+    padding-left:1rem;
+    display: block;
+    color: #ff9900;
+}
+.product .product-content .item .year-rate i , .product .product-content .item .money i{
+    color: #8b999d;
+    font-size:1.4rem;
+}
+.product .product-content .item .buy{
+    width: 15%;
+    float: left;
+    display: block;
+}
+.product .product-content .buy a{
+    display: block;
+    width: 80%;
+    margin: 3.3rem auto;
+    color: #FFFFFF;
+    text-align: center;
+    padding:.5rem;
+    border-radius: 7px;
+    background: #ff9900;
+}
+.product .product-content .buy a:hover{
+    background: #b96f00;
+}
+.product .product-content .buy .disabled{
+    color: #eee;
+    background: #ccc;
+}
+@media only screen and (max-width:50em ){
+    .product{
+        width: 95%;
+        margin-top:1rem;
+    }
+    .product h2{
+        width: 100%;
+        display: block;
+        margin-top: 1rem;
+        float: none;
+    }
+    .product h2 em{
+        display: inline-block;
+    }
+    .product .product-content{
+        width: 100%;
+        float: none;
+    }
+    .product .product-content .item{
+        border-top:1px solid #eee;
+    }
+    .product .product-content .item h3{
+        width: 22%;
+        margin: 0;
+        margin-top: .3rem;
+    }
+    .product .product-content .item h3 em{
+        font-size: 3rem;
+    }
+    .product .product-content .item .info{
+        width: 62%;
+    }
+    .product .product-content .item .info p{
+        font-size:1.6rem;
+    }
+    .product .product-content .item .year-rate , .product .product-content .item .money{
+        font-size: 2rem;
+    }
+    .product .product-content .buy a{
+        margin:2.2rem auto;
+    }
+    .product .product-content .item h3 i{
+        display: block;
+    }
+}
+@media only screen and (max-width:30em ){
+    .product{
+        width: 98%;
+        font-size:1.2rem;
+        margin-top: 0;
+    }
+    .product h2 em{
+        display: block;
+        margin-top: 0rem;
+    }
+    .product h2 em:first-child{
+        margin-top: 0rem;
+    }
+    .product .product-content .item .buy{
+        width: 100%;
+    }
+    .product .product-content .item .info{
+        width: 69.5%;
+    }
+    .product .product-content .item .info p{
+        font-size:1.4rem;
+    }
+    .product .product-content .item h3{
+        width: 29.5%;
+        margin-top:1rem;
+
+    }
+    .product .product-content .item h3 em{
+        font-size: 1.8rem;
+    }
+    .product .product-content .item .buy{
+
+    }
+    .product .product-content .buy a{
+        margin:1rem auto;
+        width: 70%;
+    }
+    .product .product-content .item .year-rate , .product .product-content .item .money{
+        font-size: 1.6rem;
+    }
+
+}
+
+
+/*底部导航*/
+
+.footer{
+    width: 90%;
+    margin:0 auto;
+}
+
+.footer .footer-content .brand {
+    display: inline-block;
+    width: 20%;
+    filter:grayscale(100%);
+    height:35px;
+    background: url(../img/logo@1x.png) no-repeat;
+}
+.footer .footer-content ul{
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 15%;
+    padding-bottom: 2rem;
+}
+.footer .footer-content ul li{
+    text-align: left;
+}
+.footer .footer-content ul li a{
+    font-size: 1.2rem;
+    /*color: #fff;*/
+    line-height:2rem;
+}
+.footer .footer-content .title a{
+    font-size: 1.6rem;
+}
+@media only screen and (max-width:50em ){
+    .footer{
+        width: 95%;
+    }
+    .footer .footer-content .brand{
+        display: none;
+    }
+    .footer .footer-content ul{
+        width: 19.3%;
+    }
+}
+@media only screen and (max-width:30em ){
+    .footer{
+    }
+    .footer .footer-content .title a{
+        font-size: 1.4rem;
+    }
+    .footer .footer-content ul li a{
+        font-size: 1rem;
+    }
+    .footer .footer-content ul{
+        width: 17.3%;
+    }
+}
+
+
+/*底部导航*/
+footer{
+    width: 100%;
+    padding:3rem 0 5rem;
+    background-color: #ededed;
+}
+footer ul li{
+    display: inline-block;
+}
+footer ul li .icon{
+    display: inline-block;
+    text-indent:-999rem;
+    margin-right:1.5rem;
+    background: url(https://i.alipayobjects.com/e/201307/jebmKcbrh.png) no-repeat;
+    -webkit-background-size: 466px 447px;
+    background-size: 466px 447px;
+    overflow: hidden;
+}
+footer ul li .icon-zfywxkz{
+    width: 38px;
+    height: 27px;
+    background-position: -369px -45px;
+}
+footer ul li .icon-pcirk{
+    width: 78px;
+    height: 27px;
+    background-position: -110px -96px;
+}
+footer ul li .icon-visayz{
+    width: 36px;
+    height: 27px;
+    background-position: -426px -90px;
+}
+footer ul li .icon-vsjmfw{
+    width: 63px;
+    height: 27px;
+    margin-right: 13px;
+    background-position: -410px -186px;
+}
+footer ul li .icon-wlgs{
+    width: 22px;
+    height: 27px;
+    background-position: -48px -48px;
+}
+footer ul li .icon-rzcx{
+    width: 75px;
+    height: 27px;
+    background-position: 0 -320px;
+}
+footer ul li .icon-gs{
+    width: 30px;
+    height: 30px;
+    margin-right: 0;
+    background: url(https://os.alipayobjects.com/rmsportal/lybcjqloSPjMAFg.png) no-repeat;
+    -webkit-background-size: 30px;
+    background-size: 30px;
+}
+footer p{
+    color: #999999;
+}
